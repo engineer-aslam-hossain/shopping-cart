@@ -125,4 +125,18 @@ document
     }
   });
 
-//   code for sub total
+//   code for remove
+
+document
+  .getElementById("remove-mobile")
+  .addEventListener("click", function (event) {
+    let cartItem = document.getElementById("mobile-cart");
+    cartItem.style.display = "none";
+  });
+
+document
+  .getElementById("remove-case")
+  .addEventListener("click", function (event) {
+    let cartItem = document.getElementById("case-cart");
+    cartItem.style.display = "none";
+  });
