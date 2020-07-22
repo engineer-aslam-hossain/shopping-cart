@@ -43,7 +43,14 @@ document
 
     // code for subtotal
     let total = subTotal("subtotal");
-    document.getElementById("subtotal").innerText = total + 1219;
+    let subtotalNum = (document.getElementById("subtotal").innerText =
+      total + 1219);
+
+    // code for tax
+    let totalTax = (document.getElementById("tax").innerText =
+      (subtotalNum * 15) / 100);
+    // code for total
+    document.getElementById("total").innerText = totalTax + subtotalNum;
   });
 
 //   code for decrement
@@ -61,7 +68,13 @@ document
       document.getElementById("mobileAmount").value = amount - 1;
       document.getElementById("mobilePrice").innerText = price - 1219;
 
-      document.getElementById("subtotal").innerText = total - 1219;
+      let subtotalNum = (document.getElementById("subtotal").innerText =
+        total - 1219);
+      // code for tax
+      let totalTax = (document.getElementById("tax").innerText =
+        (subtotalNum * 15) / 100);
+      // code for total
+      document.getElementById("total").innerText = totalTax + subtotalNum;
     }
   });
 
@@ -78,7 +91,13 @@ document
     document.getElementById("casePrice").innerText = price + 59;
     // code for subtotal
     let total = subTotal("subtotal");
-    document.getElementById("subtotal").innerText = total + 59;
+    let subtotalNum = (document.getElementById("subtotal").innerText =
+      total + 59);
+    // code for tax
+    let totalTax = (document.getElementById("tax").innerText =
+      (subtotalNum * 15) / 100);
+    // code for total
+    document.getElementById("total").innerText = totalTax + subtotalNum;
   });
 
 //   code for mobile Case amount increment
@@ -96,7 +115,13 @@ document
     } else {
       document.getElementById("caseAmount").value = amount - 1;
       document.getElementById("casePrice").innerText = price - 59;
-      document.getElementById("subtotal").innerText = total - 59;
+      let subtotalNum = (document.getElementById("subtotal").innerText =
+        total - 59);
+      // code for tax
+      let totalTax = (document.getElementById("tax").innerText =
+        (subtotalNum * 15) / 100);
+      // code for total
+      document.getElementById("total").innerText = totalTax + subtotalNum;
     }
   });
 
