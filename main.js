@@ -1,26 +1,103 @@
+// common code function
+
+function incrementDecrement(id) {
+  let amountOfMobile = document.getElementById(id).value;
+  let numberOfMobile = parseInt(amountOfMobile);
+  return numberOfMobile;
+}
+
+function priceCalculator(id) {
+  let price = document.getElementById(id).innerText;
+  let actualPrice = parseFloat(price);
+  return actualPrice;
+}
+
+function subTotal(id) {
+  let amount = document.getElementById(id).innerText;
+  let subTotalAmount = parseInt(amount);
+  return subTotalAmount;
+}
+
+// function incrementAll(id, id2) {
+//   document.getElementById(id).addEventListener("click", function (event) {
+//     let amount = incrementDecrement(id2);
+//     document.getElementById(id2).value = amount + 1;
+//   });
+// }
+
 // code for increment
+
+// let incrementOfAll = incrementAll("increment", "mobileAmount");
+// let price = priceCalculator("mobilePrice");
+// document.getElementById("mobilePrice").innerText = price + 1219;
+// document.getElementById("mobilePrice").innerText = incrementOfAll + 1219;
 document
   .getElementById("increment")
   .addEventListener("click", function (event) {
-    let amountOfMobile = document.getElementById("mobileAmount").value;
-    let numberOfMobile = parseInt(amountOfMobile);
-    // console.log(numberOfMobile + 1);
+    let amount = incrementDecrement("mobileAmount");
+    document.getElementById("mobileAmount").value = amount + 1;
 
-    document.getElementById("mobileAmount").value = numberOfMobile + 1;
+    // code for mobile price
+    let price = priceCalculator("mobilePrice");
+    document.getElementById("mobilePrice").innerText = price + 1219;
+
+    // code for subtotal
+    let total = subTotal("subtotal");
+    document.getElementById("subtotal").innerText = total + 1219;
   });
 
 //   code for decrement
 document
   .getElementById("decrement")
   .addEventListener("click", function (event) {
-    let amountOfMobile = document.getElementById("mobileAmount").value;
-    let numberOfMobile = parseInt(amountOfMobile);
-    // console.log(numberOfMobile + 1);
-
-    if (numberOfMobile == 0) {
+    let amount = incrementDecrement("mobileAmount");
+    // code for mobile price
+    let price = priceCalculator("mobilePrice");
+    // code for subtotal
+    let total = subTotal("subtotal");
+    if (amount == 0) {
       return 0;
     } else {
-      return (document.getElementById("mobileAmount").value =
-        numberOfMobile - 1);
+      document.getElementById("mobileAmount").value = amount - 1;
+      document.getElementById("mobilePrice").innerText = price - 1219;
+
+      document.getElementById("subtotal").innerText = total - 1219;
     }
   });
+
+//   code for mobile Case amount increment
+
+document
+  .getElementById("incrementValue")
+  .addEventListener("click", function (event) {
+    let amount = incrementDecrement("caseAmount");
+    document.getElementById("caseAmount").value = amount + 1;
+
+    // code for mobile price
+    let price = priceCalculator("casePrice");
+    document.getElementById("casePrice").innerText = price + 59;
+    // code for subtotal
+    let total = subTotal("subtotal");
+    document.getElementById("subtotal").innerText = total + 59;
+  });
+
+//   code for mobile Case amount increment
+document
+  .getElementById("decrementValue")
+  .addEventListener("click", function (event) {
+    let amount = incrementDecrement("caseAmount");
+    // code for mobile price
+    let price = priceCalculator("casePrice");
+    // code for subtotal
+    let total = subTotal("subtotal");
+
+    if (amount == 0) {
+      return 0;
+    } else {
+      document.getElementById("caseAmount").value = amount - 1;
+      document.getElementById("casePrice").innerText = price - 59;
+      document.getElementById("subtotal").innerText = total - 59;
+    }
+  });
+
+//   code for sub total
